@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Heart Disease Prediction</title>
+</head>
+<body>
+    <h2 id="heart">Heart Disease Prediction</h2>
+    <div class="slider-container">
+        <label for="age">Age:</label>
+        <input type="range" id="age" min="0" max="100" value="25" oninput="ageValue.textContent=this.value">
+        <span class="value" id="ageValue">25</span>
+    </div>
+    <div class="slider-container">
+        <label for="sex">Sex ( Male : 1, Female : 0):</label>
+        <input type="range" id="sex"  min="0" max="1" value="0" oninput="sexValue.textContent=this.value">
+        <span class="value" id="sexValue">0</span>
+    </div>
+    <div class="slider-container">
+        <label for="chestpain">ChestPain Type ( ASY : 1 , NAP : 2 , ATA : 3 , TA : 4 )</label>
+        <input type="range" id="chestpain" min="1" max="4" value="1" oninput="chestpainValue.textContent=this.value">
+        <span class="value" id="chestpainValue">1</span>
+    </div>
+    <div class="slider-container">
+        <label for="RestingBP">RestingBP</label>
+        <input type="range" id="RestingBP" min="40" max="200" value="90" oninput="RestingBPValue.textContent=this.value">
+        <span class="value" id="RestingBPValue">90</span>
+    </div>
+    <div class="slider-container">
+        <label for="Cholesterol">Cholesterol</label>
+        <input type="range" id="Cholesterol" min="0" max="500" value="150" oninput="CholesterolValue.textContent=this.value">
+        <span class="value" id="CholesterolValue">150</span>
+    </div>
+    <div class="slider-container">
+        <label for="FastingBS">FastingBS</label>
+        <input type="range" id="FastingBS" min="0" max="1" value="0" oninput="FastingBSValue.textContent=this.value">
+        <span class="value" id="FastingBSValue">0</span>
+    </div>
+    <div class="slider-container">
+        <label for="RestingECG">RestingECG ( Normal : 0 , LVH : 1 , ST : 2)</label>
+        <input type="range" id="RestingECG" min="0" max="2" value="0" oninput="RestingECGValue.textContent=this.value">
+        <span class="value" id="RestingECGValue">0</span>
+    </div>
+    <div class="slider-container">
+        <label for="MaxHR">MaxHR</label>
+        <input type="range" id="MaxHR" min="40" max="220" value="80" oninput="MaxHRValue.textContent=this.value">
+        <span class="value" id="MaxHRValue">80</span>
+    </div>
+    <div class="slider-container">
+        <label for="ExerciseAngina">ExerciseAngina ( N : 0 , Y : 1 )</label>
+        <input type="range" id="ExerciseAngina" min="0" max="1" value="0" oninput="ExerciseAnginaValue.textContent=this.value">
+        <span class="value" id="ExerciseAnginaValue">0</span>
+    </div>
+    <div class="slider-container">
+        <label for="OldPeak">OldPeak</label>
+        <input type="range" id="OldPeak" min="-3.0" max="7.0" value="0.0" oninput="OldPeakValue.textContent=this.value">
+        <span class="value" id="OldPeakValue">0.0</span>
+    </div>
+    <div class="slider-container">
+        <label for="ST_Slope">ST_Slope ( Down : 0 , Flat : 1, Up : 2) </label>
+        <input type="range" id="ST_Slope" min="0" max="2" value="1" oninput="ST_SlopeValue.textContent=this.value">
+        <span class="value" id="ST_SlopeValue">1</span>
+    </div>
+
+    <div id="result-continer">
+        <button type="button" class="predict" onclick="onclickPredict()">Predict</button>
+        <div id="uirpedict" class="result">
+            <h2 id="result-id"></h2>
+        </div>
+    </div>
+</body>
+</html>
